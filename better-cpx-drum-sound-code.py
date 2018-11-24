@@ -1,5 +1,7 @@
-# Playground 808
-# Drum machine
+# Paper 808
+# Drum machine using John Park's code:
+# https://learn.adafruit.com/adafruit-circuit-playground-express/playground-drum-machine
+
 import time
  
 import audioio
@@ -29,9 +31,9 @@ for i in range(7):
     touchPad[i].threshold += 1000
  
 # The seven files assigned to the touchpads
-audiofiles = ["bd_tek.wav", "elec_hi_snare.wav", "elec_cymbal.wav",
-              "scratch.wav", "bd_zome.wav", "bass_hit_c.wav",
-              "drum_cowbell.wav"]
+audiofiles = ["1-cymbal.wav", "2-snare.wav", "3-bass.wav",
+              "4-scratch.wav", "5-zome.wav", "6-tek.wav",
+              "7-cowbell.wav"]
  
 a = audioio.AudioOut(board.A0)
  
@@ -43,8 +45,7 @@ def play_file(filename):
     time.sleep(bpm / 960)  # sixteenthNote delay
  
  
-while True:
- 
+while True: 
     for i in range(7):
         if touchPad[i].value:
             play_file(audiofiles[i])
