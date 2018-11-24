@@ -1,28 +1,24 @@
-import time
+# cpx drum machine
 from adafruit_circuitplayground.express import cpx
-# Just a test
-cpx.play_file("scratch.wav")
-cpx.adjust_touch_threshold(400)
+
+# increase this number if touch is too sensitive.
+# decrease if not sensitive enough.
+# Note: running on battery is usually less sensitive
+# than running while connected and powered by USB.
+cpx.adjust_touch_threshold(600)
 
 while True:
     if cpx.touch_A1:
-        print("Touched A1!")
-        cpx.play_file("bd_tek.wav")
+        cpx.play_file("1-cymbal.wav")
     if cpx.touch_A2:
-        print("Touched A2!")
-        cpx.play_file("elec_hi_snare.wav")
+        cpx.play_file("2-snare.wav")
     if cpx.touch_A3:
-        print("Touched A3!")
-        cpx.play_file("elec_cymbal.wav")
+        cpx.play_file("3-bass.wav")
     if cpx.touch_A4:
-        print("scratch A4!")
-        cpx.play_file("scratch.wav")
+        cpx.play_file("4-scratch.wav")
     if cpx.touch_A5:
-        print("Touched A5!")
-        cpx.play_file("bd_zome.wav")
+        cpx.play_file("5-zome.wav")
     if cpx.touch_A6:
-        print("Touched A6!")
-        cpx.play_file("bass_hit_c.wav")
+        cpx.play_file("6-tek.wav")
     if cpx.touch_A7:
-        print("Touched A7!")
-        cpx.play_file("drum_cowbell.wav")
+        cpx.play_file("7-cowbell.wav")
